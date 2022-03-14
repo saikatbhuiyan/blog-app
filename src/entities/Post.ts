@@ -14,3 +14,5 @@ export class Post {
   @Property({ type: "text" })
   title!: string;
 }
+
+// npx mikro-orm migration:create
