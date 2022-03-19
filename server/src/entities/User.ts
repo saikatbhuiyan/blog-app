@@ -3,7 +3,7 @@ import { ObjectType, Field } from "type-graphql";
 
 @ObjectType()
 @Entity()
-export class Post {
+export class User {
   @Field()
   @PrimaryKey()
   id!: number;
@@ -17,8 +17,9 @@ export class Post {
   updatedAt = new Date();
 
   @Field()
-  @Property({ type: "text" })
-  title!: string;
-}
+  @Property({ type: "text", unique: true })
+  username!: string;
 
-// npx mikro-orm migration:create
+  @Property({ type: "text" })
+  password!: string;
+}
